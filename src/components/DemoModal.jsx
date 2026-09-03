@@ -1,24 +1,73 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, CheckCircle2, Sparkles, Building2, User, Mail, Video, ShieldCheck } from 'lucide-react';
+import { X, CheckCircle2, Sparkles, Building2, User, Mail, ShieldCheck, Loader2, AlertCircle } from 'lucide-react';
+import emailjs from '@emailjs/browser';
 
 export default function DemoModal({ isOpen, onClose }) {
   const [submitted, setSubmitted] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const [errorMessage, setErrorMessage] = useState('');
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     company: '',
-    role: 'Jefe / Especialista de Higiene y Seguridad',
-    cameraCount: '10 - 50 cámaras',
+    role: 'Higiene y Seguridad (HyS)',
+    cameraCount: '10 a 50 cámaras',
+    notes: '',
   });
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setSubmitted(true);
+    setIsLoading(true);
+    setErrorMessage('');
+
+    const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+    const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+    const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
+    try {
+      // Si las credenciales están configuradas, enviamos el mail real
+      if (serviceId && templateId && publicKey) {
+        await emailjs.send(
+          serviceId,
+          templateId,
+          {
+            user_name: formData.name,
+            user_email: formData.email,
+            company: formData.company,
+            role: formData.role,
+            camera_count: formData.cameraCount,
+            notes: formData.notes || 'Ninguna especificada',
+            submission_date: new Date().toLocaleString('es-AR'),
+          },
+          publicKey
+        );
+      } else {
+        // Modo simulación si aún no configuró las claves en .env
+        console.info(
+          '%c[Vision Demo]%c Solicitud de demo simulada con éxito. Para recibir correos reales, configura tus credenciales en el archivo .env',
+          'background: #10b981; color: white; padding: 2px 6px; border-radius: 4px; font-weight: bold;',
+          'color: #10b981; margin-left: 4px;'
+        );
+        // Pequeño delay para dar feedback visual realista
+        await new Promise((resolve) => setTimeout(resolve, 800));
+      }
+
+      setSubmitted(true);
+    } catch (error) {
+      console.error('Error al enviar solicitud con EmailJS:', error);
+      setErrorMessage(
+        'Ocurrió un inconveniente al enviar la solicitud. Por favor verifica los datos o intenta nuevamente.'
+      );
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   const handleReset = () => {
     setSubmitted(false);
+    setErrorMessage('');
+    setIsLoading(false);
     onClose();
   };
 
@@ -46,7 +95,8 @@ export default function DemoModal({ isOpen, onClose }) {
           {/* Close button */}
           <button
             onClick={handleReset}
-            className="absolute top-5 right-5 flex h-8 w-8 items-center justify-center rounded-full text-slate-400 hover:bg-slate-100 hover:text-slate-600 dark:hover:bg-slate-800 dark:hover:text-slate-200"
+            disabled={isLoading}
+            className="absolute top-5 right-5 flex h-8 w-8 items-center justify-center rounded-full text-slate-400 hover:bg-slate-100 hover:text-slate-600 disabled:opacity-50 dark:hover:bg-slate-800 dark:hover:text-slate-200"
           >
             <X size={18} />
           </button>
@@ -55,7 +105,7 @@ export default function DemoModal({ isOpen, onClose }) {
             <div>
               <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400">
                 <Sparkles size={14} />
-                <span>PILOTO SIN COSTO</span>
+                <span>PILOTO TÉCNICO SIN COSTO</span>
               </div>
 
               <h3 className="mt-2 text-2xl font-extrabold tracking-tight text-slate-900 dark:text-white">
@@ -63,8 +113,15 @@ export default function DemoModal({ isOpen, onClose }) {
               </h3>
 
               <p className="mt-2 text-sm text-slate-600 dark:text-slate-300">
-                Coordiná una sesión técnica con un especialista para evaluar la compatibilidad de tus cámaras y configurar un piloto en tu planta.
+                Coordiná una sesión técnica con un especialista para evaluar la compatibilidad de tus cámaras y configurar una prueba en tu planta.
               </p>
+
+              {errorMessage && (
+                <div className="mt-4 flex items-center gap-2 rounded-xl bg-rose-500/10 p-3 text-xs text-rose-600 dark:text-rose-400 border border-rose-500/20">
+                  <AlertCircle size={16} className="shrink-0" />
+                  <span>{errorMessage}</span>
+                </div>
+              )}
 
               <form onSubmit={handleSubmit} className="mt-6 space-y-4">
                 <div>
@@ -156,10 +213,20 @@ export default function DemoModal({ isOpen, onClose }) {
 
                 <button
                   type="submit"
-                  className="mt-6 flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-600 py-3.5 text-sm font-bold text-white shadow-lg shadow-emerald-500/20 transition-all hover:from-emerald-600 hover:to-teal-700 active:scale-98"
+                  disabled={isLoading}
+                  className="mt-6 flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-600 py-3.5 text-sm font-bold text-white shadow-lg shadow-emerald-500/20 transition-all hover:from-emerald-600 hover:to-teal-700 disabled:opacity-75 active:scale-98"
                 >
-                  <ShieldCheck size={18} />
-                  <span>Confirmar Solicitud de Demostración</span>
+                  {isLoading ? (
+                    <>
+                      <Loader2 size={18} className="animate-spin" />
+                      <span>Enviando solicitud...</span>
+                    </>
+                  ) : (
+                    <>
+                      <ShieldCheck size={18} />
+                      <span>Confirmar Solicitud de Demostración</span>
+                    </>
+                  )}
                 </button>
               </form>
             </div>
@@ -169,16 +236,16 @@ export default function DemoModal({ isOpen, onClose }) {
                 <CheckCircle2 size={36} />
               </div>
               <h3 className="mt-4 text-2xl font-bold text-slate-900 dark:text-white">
-                ¡Solicitud Registrada con Éxito!
+                ¡Solicitud Recibida con Éxito!
               </h3>
               <p className="mt-2 text-sm text-slate-600 dark:text-slate-300">
-                Gracias {formData.name}. Un ingeniero especialista de Vision se pondrá en contacto al email <strong>{formData.email}</strong> para coordinar la prueba piloto en {formData.company}.
+                Gracias <strong>{formData.name}</strong>. Hemos registrado los datos para <strong>{formData.company}</strong>. Un especialista técnico te contactará a la brevedad en <strong>{formData.email}</strong>.
               </p>
               <button
                 onClick={handleReset}
-                className="mt-6 rounded-xl bg-slate-900 px-6 py-2.5 text-sm font-semibold text-white dark:bg-slate-800 dark:hover:bg-slate-700"
+                className="mt-6 rounded-xl bg-slate-900 px-6 py-2.5 text-sm font-semibold text-white transition hover:bg-slate-800 dark:bg-slate-800 dark:hover:bg-slate-700"
               >
-                Cerrar
+                Entendido
               </button>
             </div>
           )}
