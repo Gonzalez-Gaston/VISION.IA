@@ -151,9 +151,9 @@ export default function DemoModal({ isOpen, onClose }) {
 
             {/* Línea de escaneo láser vertical */}
             <motion.div
-              animate={{ x: ['-10%', '110%'] }}
+              animate={{ left: ['-20%', '120%'] }}
               transition={{ duration: 3.5, repeat: Infinity, ease: 'linear' }}
-              className="pointer-events-none absolute inset-y-0 w-24 bg-gradient-to-r from-transparent via-emerald-400/20 to-transparent skew-x-12"
+              className="pointer-events-none absolute inset-y-0 w-32 bg-gradient-to-r from-transparent via-emerald-400/25 to-transparent skew-x-12 blur-sm"
             />
 
             {/* Scanlines de CCTV */}

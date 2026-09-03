@@ -103,12 +103,17 @@ export default function Hero({ onOpenDemo }) {
             </g>
           </svg>
 
-          {/* Láser de barrido dinámico de borde a borde */}
+          {/* Láser de barrido dinámico de extremo a extremo completo de la pantalla */}
           <motion.div
-            animate={{ x: ['-20%', '120%'] }}
-            transition={{ duration: 4.5, repeat: Infinity, ease: 'linear' }}
-            className="pointer-events-none absolute inset-y-0 w-48 bg-gradient-to-r from-transparent via-emerald-400/25 to-transparent skew-x-12 blur-md"
-          />
+            animate={{ left: ['-30%', '130%'] }}
+            transition={{ duration: 5, repeat: Infinity, ease: 'linear' }}
+            className="pointer-events-none absolute inset-y-0 w-80 -skew-x-12"
+          >
+            {/* Resplandor amplio */}
+            <div className="h-full w-full bg-gradient-to-r from-transparent via-emerald-400/20 to-transparent blur-xl" />
+            {/* Haz central brillante de alta definición */}
+            <div className="absolute inset-y-0 left-1/2 w-2 -translate-x-1/2 bg-gradient-to-r from-teal-300 via-emerald-300 to-cyan-300 opacity-70 blur-sm shadow-[0_0_20px_#10b981]" />
+          </motion.div>
 
           {/* Scanlines de CCTV */}
           <div className="cctv-scanlines pointer-events-none absolute inset-0 opacity-25" />
