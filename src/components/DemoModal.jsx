@@ -149,11 +149,11 @@ export default function DemoModal({ isOpen, onClose }) {
               <circle cx="220" cy="140" r="3" fill="#06b6d4" />
             </svg>
 
-            {/* Línea de escaneo láser vertical */}
+            {/* Línea de escaneo láser suave y amplia */}
             <motion.div
-              animate={{ left: ['-20%', '120%'] }}
-              transition={{ duration: 3.5, repeat: Infinity, ease: 'linear' }}
-              className="pointer-events-none absolute inset-y-0 w-32 bg-gradient-to-r from-transparent via-emerald-400/25 to-transparent skew-x-12 blur-sm"
+              animate={{ left: ['-30%', '130%'] }}
+              transition={{ duration: 6, repeat: Infinity, ease: 'linear' }}
+              className="pointer-events-none absolute inset-y-0 w-64 bg-gradient-to-r from-transparent via-emerald-400/25 via-teal-300/30 to-transparent skew-x-12 blur-md"
             />
 
             {/* Scanlines de CCTV */}

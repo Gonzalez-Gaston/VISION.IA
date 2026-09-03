@@ -103,16 +103,13 @@ export default function Hero({ onOpenDemo }) {
             </g>
           </svg>
 
-          {/* Láser de barrido dinámico de extremo a extremo completo de la pantalla */}
+          {/* Estela de luz cinematográfica amplia, suave y con velocidad lenta */}
           <motion.div
-            animate={{ left: ['-30%', '130%'] }}
-            transition={{ duration: 5, repeat: Infinity, ease: 'linear' }}
-            className="pointer-events-none absolute inset-y-0 w-80 -skew-x-12"
+            animate={{ left: ['-40%', '140%'] }}
+            transition={{ duration: 8.5, repeat: Infinity, ease: 'linear' }}
+            className="pointer-events-none absolute inset-y-0 w-[550px] -skew-x-12"
           >
-            {/* Resplandor amplio */}
-            <div className="h-full w-full bg-gradient-to-r from-transparent via-emerald-400/20 to-transparent blur-xl" />
-            {/* Haz central brillante de alta definición */}
-            <div className="absolute inset-y-0 left-1/2 w-2 -translate-x-1/2 bg-gradient-to-r from-teal-300 via-emerald-300 to-cyan-300 opacity-70 blur-sm shadow-[0_0_20px_#10b981]" />
+            <div className="h-full w-full bg-gradient-to-r from-transparent via-emerald-400/25 via-teal-300/30 to-transparent blur-2xl" />
           </motion.div>
 
           {/* Scanlines de CCTV */}
