@@ -3,15 +3,10 @@ import { motion } from 'framer-motion';
 import {
   ArrowRight,
   ChevronRight,
-  Sparkles,
   Shield,
   Cpu,
   Lock,
   CheckCircle,
-  Activity,
-  Radio,
-  Eye,
-  Scan,
 } from 'lucide-react';
 import MonitoringDashboard from './MonitoringDashboard';
 
@@ -26,38 +21,38 @@ const fadeUp = {
 
 export default function Hero({ onOpenDemo }) {
   return (
-    <section id="inicio" className="px-3 pt-20 pb-16 sm:px-6 lg:px-8">
+    <section id="inicio" className="w-full">
       {/* ========================================================================= */}
-      {/* GRAN PORTADA TECNOLÓGICA PRINCIPAL (HERO COVER BANNER)                    */}
+      {/* 1. PORTADA TECNOLÓGICA DE PANTALLA COMPLETA (EDGE-TO-EDGE COVER)           */}
       {/* ========================================================================= */}
-      <div className="relative mx-auto max-w-7xl overflow-hidden rounded-3xl border border-slate-800 bg-slate-950 shadow-2xl shadow-emerald-950/30">
+      <div className="relative w-full overflow-hidden border-b border-slate-800 bg-slate-950 pt-32 pb-20 sm:pt-36 sm:pb-28">
         
         {/* ======================================================================= */}
-        {/* MALLA VECTORIAL ANIMADA, LÁSER Y RESPLANDOR DE IA EN EL FONDO DE LA PORTADA */}
+        {/* MALLA VECTORIAL ANIMADA, LÁSER Y RESPLANDOR NEÓN DE BORDE A BORDE       */}
         {/* ======================================================================= */}
         <div className="pointer-events-none absolute inset-0 select-none overflow-hidden">
-          {/* Luces y resplandores neón */}
-          <div className="absolute left-1/2 -top-24 h-96 w-[650px] -translate-x-1/2 rounded-full bg-emerald-500/25 blur-[120px]" />
-          <div className="absolute top-1/2 -left-20 h-80 w-80 rounded-full bg-teal-500/20 blur-[100px]" />
-          <div className="absolute top-1/2 -right-20 h-80 w-80 rounded-full bg-cyan-500/20 blur-[100px]" />
+          {/* Resplandores ambientales */}
+          <div className="absolute left-1/2 -top-24 h-[500px] w-[800px] -translate-x-1/2 rounded-full bg-emerald-500/20 blur-[130px]" />
+          <div className="absolute top-1/2 -left-20 h-80 w-80 rounded-full bg-teal-500/15 blur-[100px]" />
+          <div className="absolute top-1/2 -right-20 h-80 w-80 rounded-full bg-cyan-500/15 blur-[100px]" />
 
-          {/* Malla Vectorial de Circuitos IA (SVG Neural Grid) */}
+          {/* Malla Vectorial de Circuitos IA (SVG Neural Grid) de ancho completo */}
           <svg
-            className="absolute inset-0 h-full w-full opacity-60"
+            className="absolute inset-0 h-full w-full opacity-65"
             preserveAspectRatio="none"
-            viewBox="0 0 1200 600"
+            viewBox="0 0 1400 600"
           >
             <defs>
-              <linearGradient id="mainHeroGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+              <linearGradient id="fullCoverGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
                 <stop offset="0%" stopColor="#10b981" stopOpacity="0.9" />
                 <stop offset="50%" stopColor="#06b6d4" stopOpacity="0.7" />
                 <stop offset="100%" stopColor="#10b981" stopOpacity="0.2" />
               </linearGradient>
-              <linearGradient id="mainHeroGrad2" x1="100%" y1="0%" x2="0%" y2="100%">
+              <linearGradient id="fullCoverGrad2" x1="100%" y1="0%" x2="0%" y2="100%">
                 <stop offset="0%" stopColor="#3b82f6" stopOpacity="0.8" />
                 <stop offset="100%" stopColor="#10b981" stopOpacity="0.2" />
               </linearGradient>
-              <filter id="heroGlow" x="-20%" y="-20%" width="140%" height="140%">
+              <filter id="fullCoverGlow" x="-20%" y="-20%" width="140%" height="140%">
                 <feGaussianBlur stdDeviation="3" result="blur" />
                 <feMerge>
                   <feMergeNode in="blur" />
@@ -66,65 +61,65 @@ export default function Hero({ onOpenDemo }) {
               </filter>
             </defs>
 
-            {/* Líneas de circuitos vectoriales tecnológicos */}
+            {/* Circuitos y vectores tecnológicos de borde a borde */}
             <path
-              d="M 0 100 Q 300 220 600 70 T 1200 160"
+              d="M 0 100 Q 350 240 700 70 T 1400 160"
               fill="none"
-              stroke="url(#mainHeroGrad1)"
+              stroke="url(#fullCoverGrad1)"
               strokeWidth="2.5"
               strokeDasharray="10 6"
-              filter="url(#heroGlow)"
+              filter="url(#fullCoverGlow)"
             />
             <path
-              d="M 0 260 C 350 70, 850 380, 1200 120"
+              d="M 0 280 C 400 80, 1000 400, 1400 130"
               fill="none"
-              stroke="url(#mainHeroGrad2)"
+              stroke="url(#fullCoverGrad2)"
               strokeWidth="2"
               strokeDasharray="8 6"
-              filter="url(#heroGlow)"
+              filter="url(#fullCoverGlow)"
             />
             <path
-              d="M 0 420 Q 400 260 800 480 T 1200 320"
+              d="M 0 450 Q 450 280 900 500 T 1400 340"
               fill="none"
               stroke="#10b981"
               strokeWidth="1.5"
               opacity="0.35"
             />
 
-            {/* Grid ortogonal tecnológico */}
-            <line x1="150" y1="0" x2="250" y2="600" stroke="#10b981" strokeWidth="0.8" strokeDasharray="5 5" opacity="0.3" />
-            <line x1="450" y1="0" x2="550" y2="600" stroke="#06b6d4" strokeWidth="0.8" strokeDasharray="5 5" opacity="0.3" />
-            <line x1="750" y1="0" x2="850" y2="600" stroke="#10b981" strokeWidth="0.8" strokeDasharray="5 5" opacity="0.3" />
-            <line x1="1050" y1="0" x2="1100" y2="600" stroke="#06b6d4" strokeWidth="0.8" strokeDasharray="5 5" opacity="0.3" />
+            {/* Grid ortogonal */}
+            <line x1="200" y1="0" x2="350" y2="600" stroke="#10b981" strokeWidth="0.8" strokeDasharray="5 5" opacity="0.3" />
+            <line x1="550" y1="0" x2="700" y2="600" stroke="#06b6d4" strokeWidth="0.8" strokeDasharray="5 5" opacity="0.3" />
+            <line x1="900" y1="0" x2="1050" y2="600" stroke="#10b981" strokeWidth="0.8" strokeDasharray="5 5" opacity="0.3" />
+            <line x1="1250" y1="0" x2="1350" y2="600" stroke="#06b6d4" strokeWidth="0.8" strokeDasharray="5 5" opacity="0.3" />
 
             {/* Nodos de IA luminosos */}
-            <g filter="url(#heroGlow)">
-              <circle cx="150" cy="140" r="6" fill="#10b981" />
-              <circle cx="300" cy="220" r="5" fill="#34d399" />
-              <circle cx="600" cy="70" r="7" fill="#06b6d4" />
-              <circle cx="850" cy="240" r="5.5" fill="#10b981" />
-              <circle cx="1050" cy="140" r="6" fill="#34d399" />
-              <circle cx="450" cy="165" r="5" fill="#06b6d4" />
+            <g filter="url(#fullCoverGlow)">
+              <circle cx="200" cy="145" r="6" fill="#10b981" />
+              <circle cx="350" cy="235" r="5" fill="#34d399" />
+              <circle cx="700" cy="70" r="7" fill="#06b6d4" />
+              <circle cx="1000" cy="255" r="5.5" fill="#10b981" />
+              <circle cx="1250" cy="145" r="6" fill="#34d399" />
+              <circle cx="550" cy="180" r="5" fill="#06b6d4" />
             </g>
           </svg>
 
-          {/* Láser de barrido continuo que recorre toda la portada */}
+          {/* Láser de barrido dinámico de borde a borde */}
           <motion.div
             animate={{ x: ['-20%', '120%'] }}
             transition={{ duration: 4.5, repeat: Infinity, ease: 'linear' }}
-            className="pointer-events-none absolute inset-y-0 w-40 bg-gradient-to-r from-transparent via-emerald-400/25 to-transparent skew-x-12 blur-md"
+            className="pointer-events-none absolute inset-y-0 w-48 bg-gradient-to-r from-transparent via-emerald-400/25 to-transparent skew-x-12 blur-md"
           />
 
-          {/* Scanlines de CCTV Industrial */}
-          <div className="cctv-scanlines pointer-events-none absolute inset-0 opacity-30" />
+          {/* Scanlines de CCTV */}
+          <div className="cctv-scanlines pointer-events-none absolute inset-0 opacity-25" />
         </div>
 
         {/* ======================================================================= */}
-        {/* CONTENIDO DENTRO DE LA PORTADA                                          */}
+        {/* CONTENIDO EXCLUSIVO ENMARCADO EN LA PORTADA                             */}
         {/* ======================================================================= */}
-        <div className="relative z-10 px-5 pt-12 pb-16 text-center sm:px-10 sm:pt-16 sm:pb-20 lg:pt-20 lg:pb-24">
+        <div className="relative z-10 mx-auto max-w-5xl px-4 text-center sm:px-6 lg:px-8">
           
-          {/* Badge superior tecnológico */}
+          {/* Badge superior */}
           <motion.div
             initial="hidden"
             animate="visible"
@@ -133,7 +128,7 @@ export default function Hero({ onOpenDemo }) {
           >
             <Cpu size={15} className="text-emerald-400 animate-pulse" />
             <span>VISION AI · PLATAFORMA DE SEGURIDAD INDUSTRIAL</span>
-            <span className="hidden sm:inline-block rounded-full bg-emerald-400/20 px-2 py-0.5 text-[10px] text-emerald-200">
+            <span className="rounded-full bg-emerald-400/25 px-2 py-0.5 text-[10px] font-extrabold text-emerald-200 uppercase">
               EN VIVO
             </span>
           </motion.div>
@@ -161,7 +156,7 @@ export default function Hero({ onOpenDemo }) {
             Vision analiza los feeds de tus cámaras de seguridad existentes mediante visión artificial para auditar, en milisegundos, el uso reglamentario de Elementos de Protección Personal (EPP).
           </motion.p>
 
-          {/* Botones de acción principal */}
+          {/* Botones de acción */}
           <motion.div
             initial="hidden"
             animate="visible"
@@ -185,12 +180,12 @@ export default function Hero({ onOpenDemo }) {
             </a>
           </motion.div>
 
-          {/* Insignias de confianza en la portada */}
+          {/* Insignias de confianza en la base de la portada */}
           <motion.div
             initial="hidden"
             animate="visible"
             variants={fadeUp}
-            className="mt-10 flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-xs font-medium text-slate-400"
+            className="mt-12 flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-xs font-medium text-slate-400"
           >
             <div className="flex items-center gap-2">
               <CheckCircle size={15} className="text-emerald-400" />
@@ -207,13 +202,26 @@ export default function Hero({ onOpenDemo }) {
           </motion.div>
         </div>
 
-        {/* ======================================================================= */}
-        {/* CONSOLA DE MONITOREO CCTV INTEGRADA EN LA BASE DE LA PORTADA             */}
-        {/* ======================================================================= */}
-        <div className="relative z-10 px-4 pb-10 sm:px-8 sm:pb-14">
-          <MonitoringDashboard />
+      </div>
+
+      {/* ========================================================================= */}
+      {/* 2. CONSOLA DE MONITOREO CCTV (UBICADA FUERA DE LA PORTADA)               */}
+      {/* ========================================================================= */}
+      <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
+        <div className="mx-auto max-w-3xl text-center mb-10">
+          <div className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400">
+            <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
+            <span>CONSOLA OPERACIONAL EN TIEMPO REAL</span>
+          </div>
+          <h2 className="mt-2 text-2xl font-extrabold tracking-tight text-slate-900 sm:text-3xl dark:text-white">
+            Simulador de Detección y Análisis en Vivo
+          </h2>
+          <p className="mt-2 text-sm text-slate-600 dark:text-slate-300">
+            Interactúa con la consola para comprobar cómo el motor de IA identifica el EPP en diferentes cámaras de planta.
+          </p>
         </div>
 
+        <MonitoringDashboard />
       </div>
     </section>
   );
