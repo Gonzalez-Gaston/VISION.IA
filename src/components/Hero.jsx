@@ -95,7 +95,7 @@ export default function Hero({ onOpenDemo }) {
             </div>
             <div className="flex items-center gap-1.5">
               <Shield size={14} className="text-emerald-500" />
-              <span>Alineado a normas OSHA e ISO 45001</span>
+              <span>Reportes de auditoría y trazabilidad digital</span>
             </div>
             <div className="flex items-center gap-1.5">
               <Lock size={14} className="text-emerald-500" />

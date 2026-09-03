@@ -21,7 +21,7 @@ export default function Footer() {
             </p>
             <div className="flex items-center gap-2 text-xs font-semibold text-emerald-600 dark:text-emerald-400">
               <Shield size={14} />
-              <span>Certificaciones ISO 27001 & ISO 45001 Ready</span>
+              <span>Estándares de Seguridad e Higiene Industrial</span>
             </div>
           </div>
 
@@ -45,7 +45,7 @@ export default function Footer() {
             </h4>
             <ul className="mt-4 space-y-2.5 text-xs text-slate-600 dark:text-slate-400">
               <li><a href="#mision" className="hover:text-emerald-500">Nuestra Misión</a></li>
-              <li><a href="#normativas" className="hover:text-emerald-500">Normativas OSHA / ART</a></li>
+              <li><a href="#normativas" className="hover:text-emerald-500">Auditorías y Reportes</a></li>
               <li><a href="#" className="hover:text-emerald-500">Política de Privacidad</a></li>
               <li><a href="#" className="hover:text-emerald-500">Términos de Servicio</a></li>
             </ul>

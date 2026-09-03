@@ -10,8 +10,8 @@ export default function ROISection({ onOpenDemo }) {
       icon: Database,
     },
     {
-      title: "Auditorías continuas y respaldo legal",
-      description: "Generación automática de evidencia con estampas de tiempo cifradas para inspecciones de ART, SRT e ISO 45001.",
+      title: "Auditorías continuas y respaldo digital",
+      description: "Generación automática de evidencia con estampas de tiempo cifradas para inspecciones internas y comités de seguridad.",
       icon: ShieldCheck,
     },
     {

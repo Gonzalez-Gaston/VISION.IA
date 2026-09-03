@@ -42,7 +42,7 @@ const features = [
     tag: "Auditoría y Métricas",
     title: "Monitoreo y analítica centralizada",
     description:
-      "Tableros de control con índices de siniestralidad, mapas de calor de riesgo por planta y reportes automáticos listos para auditorías ISO.",
+      "Tableros de control con índices de cumplimiento, mapas de calor de riesgo por planta y reportes automáticos para comités de seguridad.",
     highlight: "Reportes automatizados",
   },
 ];
