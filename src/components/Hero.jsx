@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, ChevronRight, Sparkles, Shield, Cpu, Lock, CheckCircle } from 'lucide-react';
+import { ArrowRight, ChevronRight, Sparkles, Shield, Cpu, Lock, CheckCircle, Activity, Zap } from 'lucide-react';
 import MonitoringDashboard from './MonitoringDashboard';
 
 const fadeUp = {
@@ -15,23 +15,71 @@ const fadeUp = {
 export default function Hero({ onOpenDemo }) {
   return (
     <section id="inicio" className="relative overflow-hidden pt-28 pb-16 md:pt-36 md:pb-24">
-      {/* Background visual accents */}
-      <div className="pointer-events-none absolute inset-0 -z-10">
-        <div className="absolute left-1/2 top-10 h-[500px] w-[800px] -translate-x-1/2 rounded-full bg-gradient-to-tr from-emerald-500/15 to-teal-500/10 blur-[130px]" />
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#64748b0a_1px,transparent_1px),linear-gradient(to_bottom,#64748b0a_1px,transparent_1px)] [background-size:40px_40px]" />
+      {/* ============================================================ */}
+      {/* FONDO TECNOLÓGICO CON MALLA VECTORIAL Y LÁSER DE ESCANEO     */}
+      {/* ============================================================ */}
+      <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden select-none">
+        {/* Luces difusas / Glows de fondo */}
+        <div className="absolute left-1/2 top-10 h-[550px] w-[900px] -translate-x-1/2 rounded-full bg-gradient-to-tr from-emerald-500/20 via-teal-500/15 to-cyan-500/10 blur-[140px]" />
+        <div className="absolute top-1/4 -right-20 h-72 w-72 rounded-full bg-emerald-500/10 blur-[100px]" />
+        <div className="absolute top-1/3 -left-20 h-72 w-72 rounded-full bg-teal-500/10 blur-[100px]" />
+
+        {/* Malla Vectorial Tecnológica de Alta Resolución (SVG Neural Grid) */}
+        <svg
+          className="absolute inset-0 h-full w-full opacity-35 dark:opacity-45"
+          preserveAspectRatio="none"
+          viewBox="0 0 1400 800"
+        >
+          <defs>
+            <linearGradient id="heroLineGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stopColor="#10b981" stopOpacity="0.8" />
+              <stop offset="50%" stopColor="#14b8a6" stopOpacity="0.5" />
+              <stop offset="100%" stopColor="#06b6d4" stopOpacity="0.1" />
+            </linearGradient>
+            <linearGradient id="heroLineGrad2" x1="100%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" stopColor="#3b82f6" stopOpacity="0.6" />
+              <stop offset="100%" stopColor="#10b981" stopOpacity="0.1" />
+            </linearGradient>
+          </defs>
+
+          {/* Líneas de circuitos vectoriales cruzadas */}
+          <path d="M 0 180 Q 350 320 700 120 T 1400 240" fill="none" stroke="url(#heroLineGrad)" strokeWidth="1.8" strokeDasharray="8 6" />
+          <path d="M 0 320 C 400 100, 950 480, 1400 180" fill="none" stroke="url(#heroLineGrad2)" strokeWidth="1.2" opacity="0.6" />
+          <path d="M 100 0 L 350 800 M 550 0 L 800 800 M 950 0 L 1200 800" fill="none" stroke="#64748b" strokeWidth="0.6" strokeDasharray="4 4" opacity="0.25" />
+          
+          {/* Nodos de interconexión IA */}
+          <circle cx="200" cy="220" r="4.5" fill="#10b981" />
+          <circle cx="350" cy="265" r="3.5" fill="#34d399" />
+          <circle cx="700" cy="120" r="5.5" fill="#10b981" />
+          <circle cx="1050" cy="180" r="4" fill="#06b6d4" />
+          <circle cx="1250" cy="220" r="3.5" fill="#10b981" />
+          
+          <circle cx="500" cy="200" r="3" fill="#14b8a6" />
+          <circle cx="880" cy="380" r="4" fill="#3b82f6" />
+        </svg>
+
+        {/* Línea de barrido láser tecnológico continuo */}
+        <motion.div
+          animate={{ x: ['-20%', '120%'] }}
+          transition={{ duration: 6, repeat: Infinity, ease: 'linear' }}
+          className="pointer-events-none absolute inset-y-0 w-48 bg-gradient-to-r from-transparent via-emerald-400/15 to-transparent skew-x-12 blur-sm"
+        />
+
+        {/* Cuadrícula sutil de ingeniería */}
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#64748b0a_1px,transparent_1px),linear-gradient(to_bottom,#64748b0a_1px,transparent_1px)] [background-size:48px_48px]" />
       </div>
 
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Main Hero Copy */}
         <div className="mx-auto max-w-4xl text-center">
-          {/* Eyebrow Badge */}
+          {/* Eyebrow Badge con estilo tecnológico */}
           <motion.div
             initial="hidden"
             animate="visible"
             variants={fadeUp}
-            className="inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-3.5 py-1.5 text-xs font-semibold text-emerald-700 backdrop-blur-md dark:border-emerald-500/20 dark:text-emerald-400"
+            className="inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-4 py-1.5 text-xs font-bold tracking-wider text-emerald-700 backdrop-blur-md dark:border-emerald-500/30 dark:bg-emerald-500/15 dark:text-emerald-300"
           >
-            <Sparkles size={14} className="animate-spin-slow text-emerald-500" />
+            <Cpu size={14} className="text-emerald-500 animate-pulse" />
             <span>INTELIGENCIA ARTIFICIAL PARA HIGIENE Y SEGURIDAD INDUSTRIAL</span>
           </motion.div>
 
