@@ -7,6 +7,7 @@ import {
   Building2,
   User,
   Mail,
+  Phone,
   ShieldCheck,
   Loader2,
   AlertCircle,
@@ -23,6 +24,7 @@ export default function DemoModal({ isOpen, onClose }) {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
+    phone: '',
     company: '',
     role: 'Higiene y Seguridad (HyS)',
     cameraCount: '10 a 50 cámaras',
@@ -43,6 +45,8 @@ export default function DemoModal({ isOpen, onClose }) {
         const templateParams = {
           user_name: formData.name,
           user_email: formData.email,
+          user_phone: formData.phone,
+          phone: formData.phone,
           company: formData.company,
           role: formData.role,
           camera_count: formData.cameraCount,
@@ -53,7 +57,7 @@ export default function DemoModal({ isOpen, onClose }) {
           reply_to: formData.email,
           from_name: formData.name,
           to_name: 'Equipo Vision.ai',
-          message: `Solicitud de Demo para ${formData.company} (${formData.cameraCount}) - Contacto: ${formData.name} (${formData.email})`,
+          message: `Solicitud de Demo para ${formData.company} (${formData.cameraCount}) - Contacto: ${formData.name} (Email: ${formData.email} | Tel: ${formData.phone || 'No especificado'})`,
         };
 
         await emailjs.send(
@@ -237,6 +241,24 @@ export default function DemoModal({ isOpen, onClose }) {
                   </div>
 
                   <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+                    {/* Teléfono / WhatsApp */}
+                    <div>
+                      <label className="block text-xs font-semibold uppercase tracking-wider text-slate-700 dark:text-slate-300">
+                        Teléfono / WhatsApp
+                      </label>
+                      <div className="relative mt-1.5">
+                        <Phone size={16} className="absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400" />
+                        <input
+                          type="tel"
+                          required
+                          value={formData.phone}
+                          onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                          placeholder="+54 9 11 1234-5678"
+                          className="w-full rounded-xl border border-slate-300 bg-slate-50 py-3 pl-10 pr-4 text-sm text-slate-900 placeholder:text-slate-500 focus:border-emerald-500 focus:bg-white focus:outline-none focus:ring-2 focus:ring-emerald-500/20 dark:border-slate-700 dark:bg-slate-800/90 dark:text-white dark:placeholder:text-slate-400 dark:focus:border-emerald-500 transition-all"
+                        />
+                      </div>
+                    </div>
+
                     {/* Empresa */}
                     <div>
                       <label className="block text-xs font-semibold uppercase tracking-wider text-slate-700 dark:text-slate-300">
@@ -254,7 +276,9 @@ export default function DemoModal({ isOpen, onClose }) {
                         />
                       </div>
                     </div>
+                  </div>
 
+                  <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                     {/* Cargo */}
                     <div>
                       <label className="block text-xs font-semibold uppercase tracking-wider text-slate-700 dark:text-slate-300">
@@ -272,23 +296,23 @@ export default function DemoModal({ isOpen, onClose }) {
                         <option>Dirección General</option>
                       </select>
                     </div>
-                  </div>
 
-                  {/* Cantidad de cámaras */}
-                  <div>
-                    <label className="block text-xs font-semibold uppercase tracking-wider text-slate-700 dark:text-slate-300">
-                      Cámaras a monitorear en la operación
-                    </label>
-                    <select
-                      value={formData.cameraCount}
-                      onChange={(e) => setFormData({ ...formData, cameraCount: e.target.value })}
-                      className="mt-1.5 w-full rounded-xl border border-slate-300 bg-slate-50 py-3 px-3 text-sm text-slate-900 focus:border-emerald-500 focus:bg-white focus:outline-none focus:ring-2 focus:ring-emerald-500/20 dark:border-slate-700 dark:bg-slate-800/90 dark:text-white dark:focus:border-emerald-500 transition-all"
-                    >
-                      <option>1 a 10 cámaras (Piloto inicial)</option>
-                      <option>10 a 50 cámaras (Planta completa)</option>
-                      <option>50 a 200 cámaras (Complejo industrial)</option>
-                      <option>+200 cámaras (Operación Multiplanta)</option>
-                    </select>
+                    {/* Cantidad de cámaras */}
+                    <div>
+                      <label className="block text-xs font-semibold uppercase tracking-wider text-slate-700 dark:text-slate-300">
+                        Cámaras a monitorear
+                      </label>
+                      <select
+                        value={formData.cameraCount}
+                        onChange={(e) => setFormData({ ...formData, cameraCount: e.target.value })}
+                        className="mt-1.5 w-full rounded-xl border border-slate-300 bg-slate-50 py-3 px-3 text-sm text-slate-900 focus:border-emerald-500 focus:bg-white focus:outline-none focus:ring-2 focus:ring-emerald-500/20 dark:border-slate-700 dark:bg-slate-800/90 dark:text-white dark:focus:border-emerald-500 transition-all"
+                      >
+                        <option>1 a 10 cámaras (Piloto inicial)</option>
+                        <option>10 a 50 cámaras (Planta completa)</option>
+                        <option>50 a 200 cámaras (Complejo industrial)</option>
+                        <option>+200 cámaras (Operación Multiplanta)</option>
+                      </select>
+                    </div>
                   </div>
 
                   {/* Botón de acción */}
