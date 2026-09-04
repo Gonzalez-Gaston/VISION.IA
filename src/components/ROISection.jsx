@@ -33,7 +33,7 @@ export default function ROISection({ onOpenDemo }) {
           <div className="grid items-center gap-12 lg:grid-cols-2">
             {/* Left Column: Heading and value proposition */}
             <div>
-              <div className="inline-flex items-center gap-2 rounded-full bg-emerald-500/10 px-3 py-1 text-xs font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400">
+              <div className="inline-flex items-center gap-2 rounded-full bg-emerald-500/10 px-3 py-1 text-xs font-bold uppercase tracking-wider text-emerald-700 dark:text-emerald-400">
                 <Zap size={14} />
                 <span>INTEGRACIÓN RÁPIDA & ROI INDUSTRIAL</span>
               </div>
@@ -42,18 +42,26 @@ export default function ROISection({ onOpenDemo }) {
                 Transformá tu infraestructura existente en un centro de prevención
               </h2>
 
-              <p className="mt-4 text-base leading-relaxed text-slate-600 dark:text-slate-300">
+              <p className="mt-4 text-base font-normal sm:font-medium leading-relaxed text-slate-600 dark:text-slate-300">
                 No necesitás reemplazar cámaras ni desplegar costosos sensores portátiles. Vision se acopla a tu red de seguridad en cuestión de horas y comienza a detectar desviaciones desde el primer día.
               </p>
 
-              <div className="mt-8 flex flex-wrap gap-4">
-                <div className="flex items-center gap-2 rounded-xl bg-white px-4 py-2.5 shadow-sm border border-slate-200/80 dark:bg-slate-850 dark:border-slate-700/80">
-                  <CheckCircle2 size={18} className="text-emerald-500" />
-                  <span className="text-xs font-semibold text-slate-800 dark:text-slate-200">Plug & Play con NVRs Hikvision, Dahua, Axis</span>
+              <div className="mt-8 space-y-3.5">
+                <div className="flex items-center gap-3">
+                  <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-emerald-500/10 text-emerald-700 dark:bg-emerald-500/15 dark:text-emerald-400">
+                    <CheckCircle2 size={16} />
+                  </div>
+                  <span className="text-sm font-semibold text-slate-800 dark:text-slate-200">
+                    Plug & Play con NVRs Hikvision, Dahua, Axis
+                  </span>
                 </div>
-                <div className="flex items-center gap-2 rounded-xl bg-white px-4 py-2.5 shadow-sm border border-slate-200/80 dark:bg-slate-850 dark:border-slate-700/80">
-                  <CheckCircle2 size={18} className="text-emerald-500" />
-                  <span className="text-xs font-semibold text-slate-800 dark:text-slate-200">Alertas automáticas a Supervisores</span>
+                <div className="flex items-center gap-3">
+                  <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-emerald-500/10 text-emerald-700 dark:bg-emerald-500/15 dark:text-emerald-400">
+                    <CheckCircle2 size={16} />
+                  </div>
+                  <span className="text-sm font-semibold text-slate-800 dark:text-slate-200">
+                    Alertas automáticas a Supervisores
+                  </span>
                 </div>
               </div>
             </div>
@@ -65,15 +73,15 @@ export default function ROISection({ onOpenDemo }) {
                 return (
                   <div
                     key={b.title}
-                    className="rounded-2xl border border-slate-200/80 bg-white/70 p-5 backdrop-blur-sm transition-all hover:border-emerald-500/40 hover:shadow-md dark:border-slate-800 dark:bg-slate-900/60"
+                    className="rounded-2xl border border-slate-200/80 bg-white/70 p-6 sm:p-7 backdrop-blur-sm transition-all hover:border-emerald-500/40 hover:shadow-md dark:border-slate-800 dark:bg-slate-900/60"
                   >
-                    <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-emerald-500/10 text-emerald-600 dark:bg-emerald-500/15 dark:text-emerald-400">
+                    <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-emerald-500/10 text-emerald-700 dark:bg-emerald-500/15 dark:text-emerald-400">
                       <Icon size={20} />
                     </div>
                     <h3 className="mt-4 text-sm font-bold text-slate-900 dark:text-white">
                       {b.title}
                     </h3>
-                    <p className="mt-2 text-xs leading-relaxed text-slate-600 dark:text-slate-400">
+                    <p className="mt-2 text-xs font-medium leading-relaxed text-slate-600 dark:text-slate-300">
                       {b.description}
                     </p>
                   </div>

@@ -9,17 +9,17 @@ export default function Footer() {
           {/* Col 1: Brand info */}
           <div className="space-y-4">
             <a href="#inicio" className="flex items-center gap-2">
-              <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-emerald-500 text-white shadow-md shadow-emerald-500/20">
+              <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-emerald-600 text-white shadow-md shadow-emerald-600/20">
                 <Eye size={18} strokeWidth={2.5} />
               </div>
               <span className="text-lg font-bold tracking-tight text-slate-900 dark:text-white">
-                Vision<span className="text-emerald-500">.ai</span>
+                Vision<span className="text-emerald-600 dark:text-emerald-400">.ai</span>
               </span>
             </a>
-            <p className="text-xs leading-relaxed text-slate-500 dark:text-slate-400">
+            <p className="text-xs font-medium leading-relaxed text-slate-600 dark:text-slate-300">
               Plataforma de Inteligencia Artificial y Visión Computacional aplicada a la prevención de accidentes y verificación automática de EPP en tiempo real.
             </p>
-            <div className="flex items-center gap-2 text-xs font-semibold text-emerald-600 dark:text-emerald-400">
+            <div className="flex items-center gap-2 text-xs font-semibold text-emerald-700 dark:text-emerald-400">
               <Shield size={14} />
               <span>Estándares de Seguridad e Higiene Industrial</span>
             </div>
@@ -30,11 +30,11 @@ export default function Footer() {
             <h4 className="text-xs font-bold uppercase tracking-wider text-slate-900 dark:text-slate-200">
               Soluciones & Casos de Uso
             </h4>
-            <ul className="mt-4 space-y-2.5 text-xs text-slate-600 dark:text-slate-400">
-              <li><a href="#monitoreo" className="hover:text-emerald-500">Detección de Casco & Chaleco</a></li>
-              <li><a href="#monitoreo" className="hover:text-emerald-500">Protección Ocular y Facial</a></li>
-              <li><a href="#monitoreo" className="hover:text-emerald-500">Arneses y Trabajo en Altura</a></li>
-              <li><a href="#monitoreo" className="hover:text-emerald-500">Zonas de Exclusión y Maquinaria</a></li>
+            <ul className="mt-4 space-y-2.5 text-xs font-medium text-slate-600 dark:text-slate-300">
+              <li><a href="#monitoreo" className="transition-colors hover:text-emerald-700 dark:hover:text-emerald-400">Detección de Casco & Chaleco</a></li>
+              <li><a href="#monitoreo" className="transition-colors hover:text-emerald-700 dark:hover:text-emerald-400">Protección Ocular y Facial</a></li>
+              <li><a href="#monitoreo" className="transition-colors hover:text-emerald-700 dark:hover:text-emerald-400">Arneses y Trabajo en Altura</a></li>
+              <li><a href="#monitoreo" className="transition-colors hover:text-emerald-700 dark:hover:text-emerald-400">Zonas de Exclusión y Maquinaria</a></li>
             </ul>
           </div>
 
@@ -43,11 +43,11 @@ export default function Footer() {
             <h4 className="text-xs font-bold uppercase tracking-wider text-slate-900 dark:text-slate-200">
               Empresa & Compliance
             </h4>
-            <ul className="mt-4 space-y-2.5 text-xs text-slate-600 dark:text-slate-400">
-              <li><a href="#mision" className="hover:text-emerald-500">Nuestra Misión</a></li>
-              <li><a href="#normativas" className="hover:text-emerald-500">Auditorías y Reportes</a></li>
-              <li><a href="#" className="hover:text-emerald-500">Política de Privacidad</a></li>
-              <li><a href="#" className="hover:text-emerald-500">Términos de Servicio</a></li>
+            <ul className="mt-4 space-y-2.5 text-xs font-medium text-slate-600 dark:text-slate-300">
+              <li><a href="#mision" className="transition-colors hover:text-emerald-700 dark:hover:text-emerald-400">Nuestra Misión</a></li>
+              <li><a href="#normativas" className="transition-colors hover:text-emerald-700 dark:hover:text-emerald-400">Auditorías y Reportes</a></li>
+              <li><a href="#" className="transition-colors hover:text-emerald-700 dark:hover:text-emerald-400">Política de Privacidad</a></li>
+              <li><a href="#" className="transition-colors hover:text-emerald-700 dark:hover:text-emerald-400">Términos de Servicio</a></li>
             </ul>
           </div>
 
@@ -56,16 +56,16 @@ export default function Footer() {
             <h4 className="text-xs font-bold uppercase tracking-wider text-slate-900 dark:text-slate-200">
               Contacto Corporativo
             </h4>
-            <ul className="mt-4 space-y-2.5 text-xs text-slate-600 dark:text-slate-400">
+            <ul className="mt-4 space-y-2.5 text-xs font-medium text-slate-600 dark:text-slate-300">
               <li className="flex items-center gap-2">
-                <Mail size={13} className="text-emerald-500" />
+                <Mail size={13} className="text-emerald-600 dark:text-emerald-400" />
                 <span>contacto@vision.ai</span>
               </li>
               <li className="flex items-center gap-2">
-                <Phone size={13} className="text-emerald-500" />
+                <Phone size={13} className="text-emerald-600 dark:text-emerald-400" />
                 <span>+54 11 5263-8800</span>
               </li>
-              <li className="text-[11px] text-slate-500 dark:text-slate-500">
+              <li className="text-[11px] text-slate-500 dark:text-slate-400 font-normal">
                 Atención a plantas industriales en toda Latinoamérica y España.
               </li>
             </ul>

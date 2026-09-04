@@ -212,7 +212,7 @@ export default function DemoModal({ isOpen, onClose }) {
                           value={formData.name}
                           onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                           placeholder="Ing. Carlos Rodríguez"
-                          className="w-full rounded-xl border border-slate-200 bg-slate-50 py-3 pl-10 pr-4 text-sm text-slate-900 focus:border-emerald-500 focus:bg-white focus:outline-none focus:ring-2 focus:ring-emerald-500/20 dark:border-slate-800 dark:bg-slate-950 dark:text-white dark:focus:border-emerald-500 transition-all"
+                          className="w-full rounded-xl border border-slate-300 bg-slate-50 py-3 pl-10 pr-4 text-sm text-slate-900 placeholder:text-slate-500 focus:border-emerald-500 focus:bg-white focus:outline-none focus:ring-2 focus:ring-emerald-500/20 dark:border-slate-700 dark:bg-slate-800/90 dark:text-white dark:placeholder:text-slate-400 dark:focus:border-emerald-500 transition-all"
                         />
                       </div>
                     </div>
@@ -230,7 +230,7 @@ export default function DemoModal({ isOpen, onClose }) {
                           value={formData.email}
                           onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                           placeholder="crodriguez@empresa.com"
-                          className="w-full rounded-xl border border-slate-200 bg-slate-50 py-3 pl-10 pr-4 text-sm text-slate-900 focus:border-emerald-500 focus:bg-white focus:outline-none focus:ring-2 focus:ring-emerald-500/20 dark:border-slate-800 dark:bg-slate-950 dark:text-white transition-all"
+                          className="w-full rounded-xl border border-slate-300 bg-slate-50 py-3 pl-10 pr-4 text-sm text-slate-900 placeholder:text-slate-500 focus:border-emerald-500 focus:bg-white focus:outline-none focus:ring-2 focus:ring-emerald-500/20 dark:border-slate-700 dark:bg-slate-800/90 dark:text-white dark:placeholder:text-slate-400 dark:focus:border-emerald-500 transition-all"
                         />
                       </div>
                     </div>
@@ -250,7 +250,7 @@ export default function DemoModal({ isOpen, onClose }) {
                           value={formData.company}
                           onChange={(e) => setFormData({ ...formData, company: e.target.value })}
                           placeholder="Siderurgia del Norte S.A."
-                          className="w-full rounded-xl border border-slate-200 bg-slate-50 py-3 pl-10 pr-4 text-sm text-slate-900 focus:border-emerald-500 focus:bg-white focus:outline-none focus:ring-2 focus:ring-emerald-500/20 dark:border-slate-800 dark:bg-slate-950 dark:text-white transition-all"
+                          className="w-full rounded-xl border border-slate-300 bg-slate-50 py-3 pl-10 pr-4 text-sm text-slate-900 placeholder:text-slate-500 focus:border-emerald-500 focus:bg-white focus:outline-none focus:ring-2 focus:ring-emerald-500/20 dark:border-slate-700 dark:bg-slate-800/90 dark:text-white dark:placeholder:text-slate-400 dark:focus:border-emerald-500 transition-all"
                         />
                       </div>
                     </div>
@@ -263,7 +263,7 @@ export default function DemoModal({ isOpen, onClose }) {
                       <select
                         value={formData.role}
                         onChange={(e) => setFormData({ ...formData, role: e.target.value })}
-                        className="mt-1.5 w-full rounded-xl border border-slate-200 bg-slate-50 py-3 px-3 text-sm text-slate-900 focus:border-emerald-500 focus:outline-none focus:ring-2 focus:ring-emerald-500/20 dark:border-slate-800 dark:bg-slate-950 dark:text-white transition-all"
+                        className="mt-1.5 w-full rounded-xl border border-slate-300 bg-slate-50 py-3 px-3 text-sm text-slate-900 focus:border-emerald-500 focus:bg-white focus:outline-none focus:ring-2 focus:ring-emerald-500/20 dark:border-slate-700 dark:bg-slate-800/90 dark:text-white dark:focus:border-emerald-500 transition-all"
                       >
                         <option>Higiene y Seguridad (HyS)</option>
                         <option>Gerencia de Planta / Operaciones</option>
@@ -282,7 +282,7 @@ export default function DemoModal({ isOpen, onClose }) {
                     <select
                       value={formData.cameraCount}
                       onChange={(e) => setFormData({ ...formData, cameraCount: e.target.value })}
-                      className="mt-1.5 w-full rounded-xl border border-slate-200 bg-slate-50 py-3 px-3 text-sm text-slate-900 focus:border-emerald-500 focus:outline-none focus:ring-2 focus:ring-emerald-500/20 dark:border-slate-800 dark:bg-slate-950 dark:text-white transition-all"
+                      className="mt-1.5 w-full rounded-xl border border-slate-300 bg-slate-50 py-3 px-3 text-sm text-slate-900 focus:border-emerald-500 focus:bg-white focus:outline-none focus:ring-2 focus:ring-emerald-500/20 dark:border-slate-700 dark:bg-slate-800/90 dark:text-white dark:focus:border-emerald-500 transition-all"
                     >
                       <option>1 a 10 cámaras (Piloto inicial)</option>
                       <option>10 a 50 cámaras (Planta completa)</option>
@@ -304,7 +304,7 @@ export default function DemoModal({ isOpen, onClose }) {
                       </>
                     ) : (
                       <>
-                        <ShieldCheck size={19} />
+                        <ShieldCheck size={16} />
                         <span>Confirmar Solicitud de Demostración</span>
                       </>
                     )}

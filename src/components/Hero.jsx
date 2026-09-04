@@ -211,14 +211,14 @@ export default function Hero({ onOpenDemo }) {
       {/* ========================================================================= */}
       <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
         <div className="mx-auto max-w-3xl text-center mb-10">
-          <div className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400">
-            <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
+          <div className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-emerald-700 dark:text-emerald-400">
+            <span className="h-1.5 w-1.5 rounded-full bg-emerald-600 dark:bg-emerald-400" />
             <span>CONSOLA OPERACIONAL EN TIEMPO REAL</span>
           </div>
           <h2 className="mt-2 text-2xl font-extrabold tracking-tight text-slate-900 sm:text-3xl dark:text-white">
             Simulador de Detección y Análisis en Vivo
           </h2>
-          <p className="mt-2 text-sm text-slate-600 dark:text-slate-300">
+          <p className="mt-2 text-sm font-medium text-slate-600 dark:text-slate-300">
             Interactúa con la consola para comprobar cómo el motor de IA identifica el EPP en diferentes cámaras de planta.
           </p>
         </div>

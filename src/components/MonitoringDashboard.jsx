@@ -235,33 +235,37 @@ export default function MonitoringDashboard() {
               <span className="absolute -bottom-1 -right-1 h-3 w-3 border-b-2 border-r-2 border-emerald-400" />
 
               {/* Top Tag */}
-              <div className={`absolute -top-7 left-0 flex items-center gap-1.5 rounded px-2 py-0.5 text-[10px] font-bold tracking-wide text-white uppercase shadow-md ${
-                hasViolation ? 'bg-rose-600 animate-pulse' : 'bg-emerald-600'
+              <div className={`absolute -top-7 left-0 flex items-center gap-1.5 rounded-md px-2.5 py-0.5 text-[10px] font-bold tracking-wide uppercase shadow-sm border backdrop-blur-md ${
+                hasViolation
+                  ? 'bg-rose-500/15 border-rose-500/30 text-rose-400'
+                  : 'bg-emerald-500/15 border-emerald-500/30 text-emerald-400'
               }`}>
                 {hasViolation ? (
                   <>
-                    <AlertTriangle size={11} />
+                    <AlertTriangle size={11} className="text-rose-400" />
                     <span>EPP INCOMPLETO · 98.9%</span>
                   </>
                 ) : (
                   <>
-                    <CheckCircle2 size={11} />
+                    <CheckCircle2 size={11} className="text-emerald-400" />
                     <span>EPP CONFORME · {confidenceScore}%</span>
                   </>
                 )}
               </div>
 
               {/* Sub-item tag: Helmet */}
-              <div className={`absolute top-2 -right-28 hidden sm:flex items-center gap-1 rounded px-2 py-0.5 text-[9px] font-semibold text-white shadow backdrop-blur-md ${
-                hasViolation ? 'bg-rose-700 border border-rose-500' : 'bg-emerald-800/90 border border-emerald-500/50'
+              <div className={`absolute top-2 -right-28 hidden sm:flex items-center gap-1.5 rounded-md px-2.5 py-0.5 text-[9px] font-semibold shadow-sm backdrop-blur-md border ${
+                hasViolation
+                  ? 'bg-rose-500/15 border-rose-500/30 text-rose-300'
+                  : 'bg-emerald-500/15 border-emerald-500/30 text-emerald-300'
               }`}>
-                <HardHat size={11} />
+                <HardHat size={11} className={hasViolation ? 'text-rose-400' : 'text-emerald-400'} />
                 <span>{hasViolation ? 'Falta Casco!' : 'Casco: 99.7%'}</span>
               </div>
 
               {/* Sub-item tag: Vest */}
-              <div className="absolute top-20 -left-28 hidden sm:flex items-center gap-1 rounded bg-emerald-800/90 px-2 py-0.5 text-[9px] font-semibold text-white shadow backdrop-blur-md border border-emerald-500/50">
-                <ShieldCheck size={11} />
+              <div className="absolute top-20 -left-28 hidden sm:flex items-center gap-1.5 rounded-md bg-emerald-500/15 px-2.5 py-0.5 text-[9px] font-semibold text-emerald-300 shadow-sm backdrop-blur-md border border-emerald-500/30">
+                <ShieldCheck size={11} className="text-emerald-400" />
                 <span>Chaleco: 99.2%</span>
               </div>
             </motion.div>
@@ -277,8 +281,8 @@ export default function MonitoringDashboard() {
                 <div className="h-full w-4 bg-slate-800" />
               </div>
             </div>
-            <div className="absolute inset-0 rounded border border-emerald-500/60 pointer-events-none">
-              <div className="absolute -top-5 left-0 rounded bg-emerald-700/90 px-1.5 py-0.2 text-[8px] font-bold text-white">
+            <div className="absolute inset-0 rounded border border-emerald-500/40 pointer-events-none">
+              <div className="absolute -top-5 left-0 rounded-md bg-emerald-500/15 border border-emerald-500/30 px-1.5 py-0.5 text-[8px] font-bold text-emerald-300 backdrop-blur-md">
                 OPERARIO #02 · OK
               </div>
             </div>
@@ -291,22 +295,22 @@ export default function MonitoringDashboard() {
                 initial={{ opacity: 0, y: 20, scale: 0.95 }}
                 animate={{ opacity: 1, y: 0, scale: 1 }}
                 exit={{ opacity: 0, y: -10, scale: 0.95 }}
-                className="absolute bottom-4 left-4 right-4 flex items-center justify-between gap-3 rounded-xl border border-rose-500/60 bg-rose-950/90 px-4 py-2.5 text-rose-100 shadow-2xl backdrop-blur-lg sm:left-auto sm:right-4 sm:max-w-md"
+                className="absolute bottom-6 right-6 left-6 sm:left-auto sm:right-6 flex items-center justify-between gap-5 rounded-2xl border border-rose-500/40 bg-slate-950/90 p-4 text-rose-100 shadow-2xl backdrop-blur-xl sm:max-w-md"
               >
-                <div className="flex items-center gap-3">
-                  <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-rose-500 text-white animate-bounce">
-                    <AlertTriangle size={17} />
+                <div className="flex items-center gap-3.5">
+                  <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-rose-500/15 text-rose-400 border border-rose-500/30 animate-pulse">
+                    <AlertTriangle size={18} />
                   </div>
                   <div>
                     <p className="text-xs font-bold text-white">
                       Infracción detectada en tiempo real
                     </p>
-                    <p className="text-[11px] text-rose-200">
+                    <p className="text-[11px] text-slate-300 mt-0.5">
                       Operario #1 sin Casco Reglamentario en {selectedCam.name}.
                     </p>
                   </div>
                 </div>
-                <span className="rounded bg-rose-800/80 px-2 py-1 text-[10px] font-mono font-bold text-rose-200 uppercase">
+                <span className="shrink-0 rounded-lg bg-rose-500/15 border border-rose-500/30 px-2.5 py-1 text-[10px] font-mono font-bold text-rose-400 uppercase">
                   Alerta Enviada
                 </span>
               </motion.div>
@@ -315,8 +319,8 @@ export default function MonitoringDashboard() {
         </div>
 
         {/* Lower Telemetry & Audit Bar */}
-        <div className="grid grid-cols-2 divide-x divide-slate-800 border-t border-slate-800 bg-slate-950/70 sm:grid-cols-4">
-          <div className="p-3 sm:px-4">
+        <div className="grid grid-cols-2 divide-x divide-slate-800 border-t border-slate-800 bg-slate-950/80 sm:grid-cols-4">
+          <div className="p-4 sm:px-5">
             <span className="text-[10px] font-medium text-slate-400">Casco de Seguridad</span>
             <div className="mt-0.5 flex items-center gap-1.5">
               <span className={`h-2 w-2 rounded-full ${hasViolation ? 'bg-rose-500' : 'bg-emerald-400'}`} />

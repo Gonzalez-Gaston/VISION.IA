@@ -56,8 +56,8 @@ export default function Features() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="mx-auto max-w-3xl text-center">
-          <div className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400">
-            <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
+          <div className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-emerald-700 dark:text-emerald-400">
+            <span className="h-1.5 w-1.5 rounded-full bg-emerald-600 dark:bg-emerald-400" />
             <span>TECNOLOGÍA DE DETECCIÓN ACTIVA</span>
           </div>
 
@@ -65,7 +65,7 @@ export default function Features() {
             De la cámara de seguridad a una decisión preventiva
           </h2>
 
-          <p className="mt-4 text-base leading-relaxed text-slate-600 sm:text-lg dark:text-slate-300">
+          <p className="mt-4 text-base font-normal sm:font-medium leading-relaxed text-slate-600 sm:text-lg dark:text-slate-300">
             Vision transforma el video pasivo de tus instalaciones en una capa activa de prevención de accidentes y auditoría continua.
           </p>
         </div>
@@ -81,35 +81,35 @@ export default function Features() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="group relative flex flex-col justify-between rounded-2xl border border-slate-200/90 bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1.5 hover:border-emerald-500/40 hover:shadow-xl hover:shadow-emerald-500/5 dark:border-slate-800 dark:bg-slate-900/90 dark:hover:border-emerald-500/40"
+                className="group relative flex flex-col justify-between rounded-2xl border border-slate-200/90 bg-white p-7 sm:p-8 shadow-sm transition-all duration-300 hover:-translate-y-1.5 hover:border-emerald-500/40 hover:shadow-xl hover:shadow-emerald-500/5 dark:border-slate-800 dark:bg-slate-900/90 dark:hover:border-emerald-500/40"
               >
                 <div>
                   {/* Top Bar: Icon + Highlight Tag */}
                   <div className="flex items-center justify-between">
-                    <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-emerald-500/10 text-emerald-600 transition-colors duration-300 group-hover:bg-emerald-500 group-hover:text-white dark:bg-emerald-500/15 dark:text-emerald-400">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-emerald-500/10 text-emerald-700 transition-colors duration-300 group-hover:bg-emerald-600 group-hover:text-white dark:bg-emerald-500/15 dark:text-emerald-400">
                       <Icon size={24} />
                     </div>
-                    <span className="rounded-full bg-slate-100 px-2.5 py-1 text-[11px] font-semibold text-slate-600 dark:bg-slate-800 dark:text-slate-300">
+                    <span className="rounded-full bg-slate-100 px-2.5 py-1 text-[11px] font-semibold text-slate-700 dark:bg-slate-800 dark:text-slate-300">
                       {feature.highlight}
                     </span>
                   </div>
 
                   {/* Feature Content */}
                   <div className="mt-6">
-                    <span className="text-[11px] font-semibold uppercase tracking-wider text-emerald-600 dark:text-emerald-400">
+                    <span className="text-[11px] font-bold uppercase tracking-wider text-emerald-700 dark:text-emerald-400">
                       {feature.tag}
                     </span>
-                    <h3 className="mt-1 text-lg font-bold text-slate-900 transition-colors group-hover:text-emerald-600 dark:text-white dark:group-hover:text-emerald-400">
+                    <h3 className="mt-1 text-lg font-bold text-slate-900 transition-colors group-hover:text-emerald-700 dark:text-white dark:group-hover:text-emerald-400">
                       {feature.title}
                     </h3>
-                    <p className="mt-3 text-sm leading-relaxed text-slate-600 dark:text-slate-400">
+                    <p className="mt-3 text-sm leading-relaxed text-slate-600 font-medium dark:text-slate-300">
                       {feature.description}
                     </p>
                   </div>
                 </div>
 
                 {/* Footer link cue */}
-                <div className="mt-6 flex items-center gap-1 text-xs font-semibold text-emerald-600 opacity-0 transition-opacity duration-300 group-hover:opacity-100 dark:text-emerald-400">
+                <div className="mt-6 flex items-center gap-1 text-xs font-bold text-emerald-700 opacity-0 transition-opacity duration-300 group-hover:opacity-100 dark:text-emerald-400">
                   <span>Ver especificación técnica</span>
                   <ArrowUpRight size={14} />
                 </div>

@@ -30,7 +30,7 @@ export default function Navbar({ darkMode, toggleTheme, onOpenDemo }) {
 
           <div className="flex flex-col">
             <span className="text-xl font-bold tracking-tight text-slate-900 transition-colors dark:text-white">
-              Vision<span className="text-emerald-500">.ai</span>
+              Vision<span className="text-emerald-600 dark:text-emerald-400">.ai</span>
             </span>
             <span className="text-[10px] font-medium uppercase tracking-widest text-slate-500 dark:text-slate-400">
               Safety Intelligence
@@ -44,7 +44,7 @@ export default function Navbar({ darkMode, toggleTheme, onOpenDemo }) {
             <a
               key={link.href}
               href={link.href}
-              className="text-sm font-medium text-slate-600 transition-colors hover:text-emerald-600 dark:text-slate-300 dark:hover:text-emerald-400"
+              className="text-sm font-medium text-slate-600 transition-colors hover:text-emerald-700 dark:text-slate-300 dark:hover:text-emerald-400"
             >
               {link.label}
             </a>
@@ -56,7 +56,7 @@ export default function Navbar({ darkMode, toggleTheme, onOpenDemo }) {
           {/* Theme Toggle Button */}
           <button
             onClick={toggleTheme}
-            className="flex h-9 w-9 items-center justify-center rounded-xl border border-slate-200 bg-slate-50 text-slate-600 transition-all hover:border-emerald-400 hover:text-emerald-600 hover:shadow-sm dark:border-slate-800 dark:bg-slate-900 dark:text-slate-300 dark:hover:border-emerald-500 dark:hover:text-emerald-400"
+            className="flex h-9 w-9 items-center justify-center rounded-xl border border-slate-200 bg-slate-50 text-slate-600 transition-all hover:border-emerald-500 hover:text-emerald-700 hover:shadow-sm dark:border-slate-800 dark:bg-slate-900 dark:text-slate-300 dark:hover:border-emerald-500 dark:hover:text-emerald-400"
             aria-label="Cambiar tema"
             title={darkMode ? "Cambiar a modo claro" : "Cambiar a modo oscuro"}
           >
